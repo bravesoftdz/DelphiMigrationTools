@@ -42,7 +42,7 @@ implementation
 {$R *.dfm}
 
 uses
-  System.Rtti, System.TypInfo, ConvertUtils;
+  System.Rtti, System.TypInfo;
 
 
 function ComponentToText(AComponent: TComponent): string;
@@ -73,7 +73,7 @@ begin
   end;
 end;
 
-function UnicodeStrToStr(AUnicode: string): string;
+function UTF8TextToStr(AUnicode: string): string;
 var
   I, Len, W, Count: Integer;
   C: Char;
@@ -179,7 +179,7 @@ function SetProperty(AComp: TComponent; APropName, APropValue: string): Boolean;
       tkString, tkLString, tkWString:
         Result := TValue.From<string>(APropValue);
       tkUString:
-        Result := TValue.From<string>(UnicodeStrToStr(APropValue));
+        Result := TValue.From<string>(UTF8TextToStr(APropValue));
       tkInteger, tkInt64:
         begin
           IdentToInt := FindIdentToInt(AValue.TypeInfo);

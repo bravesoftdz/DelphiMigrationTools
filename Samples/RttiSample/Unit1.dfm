@@ -49,6 +49,10 @@ object Form1: TForm1
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'TabSheet1'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Edit1: TEdit
         Left = 24
         Top = 16
@@ -84,6 +88,8 @@ object Form1: TForm1
       ImageIndex = 2
       ExplicitLeft = 0
       ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Button1: TButton
         Left = 24
         Top = 16
